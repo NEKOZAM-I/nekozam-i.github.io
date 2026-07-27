@@ -182,9 +182,9 @@ a.card:hover {
     font-weight: 700;
     color: var(--text-secondary);
 }
-
-.card-icon i {
-    font-size: 33px;
+.fa-brands {
+    font-size: 30px;
+    color: var(--text)
 }
 
 .card-arrow {
