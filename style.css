@@ -259,6 +259,29 @@ a.card:hover {
     text-decoration: underline;
 }
 
+.gh-graph-legend {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.gh-legend-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: var(--text);
+    border: 1px solid var(--border);
+}
+
+.gh-legend-swatch[data-level="0"] { background: transparent; }
+.gh-legend-swatch[data-level="1"] { background: rgba(245, 245, 245, 0.25); }
+.gh-legend-swatch[data-level="2"] { background: rgba(245, 245, 245, 0.5); }
+.gh-legend-swatch[data-level="3"] { background: rgba(245, 245, 245, 0.75); }
+.gh-legend-swatch[data-level="4"] { background: rgba(245, 245, 245, 1); }
+
 /* ---------- PROJECTS ---------- */
 .projects-grid {
     display: grid;
