@@ -183,7 +183,7 @@ a.card:hover {
     color: var(--text-secondary);
 }
 .fa-brands {
-    font-size: 30px;
+    font-size: 16px;
     color: var(--text)
 }
 
@@ -242,7 +242,6 @@ a.card:hover {
 
 .gh-graph-img {
     width: 100%;
-    min-width: 640px;
     height: auto;
     display: block;
     filter: grayscale(1) invert(1) contrast(1.05);
@@ -318,9 +317,22 @@ a.card:hover {
 .project-arrow {
     font-size: 16px;
     color: var(--text-secondary);
-    top: 21px;
-    position: relative;
-    left: 10px;
+    flex-shrink: 0;
+}
+
+.project-card .d-flex {
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.project-card .d-flex .project-title {
+    margin-top: 0;
+}
+
+.project-card.is-unlinked {
+    opacity: 0.72;
 }
 
 .project-desc {
@@ -410,9 +422,5 @@ footer {
 
     .card {
         min-height: 120px;
-    }
-
-    .gh-graph-img {
-        min-width: 520px;
     }
 }
