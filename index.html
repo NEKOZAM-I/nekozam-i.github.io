@@ -4,220 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nekozami. — builder</title>
-    <meta name="description"
-        content="I build small, focused tools — mostly for Discord. Explorer. Builder. Problem solver.">
+    <title>NEKOZAMI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="images/favicon.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="grain"></div>
+    <main class="grid">
 
-    <main>
-
-        <!-- 01 — INTRO -->
-        <section class="row hero" id="intro" data-index="01" data-label="INTRO">
-            <div class="row__label">
-                <span class="row__num">01</span>
-                <span class="row__name">— INTRO</span>
+        <!-- INTRODUCTION -->
+        <section class="card card--intro">
+            <div class="intro-top">
+                <img class="intro-avatar"
+                    src="https://cdn.discordapp.com/avatars/1216744553533673579/archived/1528344022475739146/bbc1a2c9f4ffd4218cf85560bbc594b8.webp?size=1024"
+                    alt="">
+                <span class="status"><span class="status-dot"></span>Looking for PMs &amp; beta testers</span>
             </div>
-            <div class="row__content">
-                <div class="hero__top">
-                    <h1 class="hero__title">Nekozami<span class="accent-dot">.</span></h1>
-                    <ul class="hero__ideas" aria-label="notes">
-                        <li class="hero__ideas-label">ideas</li>
-                        <li>1. build</li>
-                        <li>2. ship</li>
-                        <li>3. improve</li>
-                        <li>4. repeat</li>
-                    </ul>
-                </div>
+            <h1 class="intro-name">NEKOZAMI</h1>
+            <p class="intro-text">“No social stability without individual stability.”
+            <br>― Aldous Huxley, Brave New World</p>
+        </section>
 
-                <p class="hero__intro">I build small, focused tools — mostly for Discord.</p>
-                <p class="hero__sub">Explorer. Builder. Problem solver.<br>Always shipping.</p>
+        <!-- QUOTE -->
+        <section class="card card--quote">
+            <span class="eyebrow">This Website</span>
+            <i class="fa-brands fa-github"></i>
+            <p class="quote-text">Portfolio</p>
+        </section>
 
-                <div class="hero__bottom">
-                    <div class="scroll-indicator"></div>
-                    <div class="last-updated">
-                        <span class="last-updated__label">last updated</span>
-                        <span class="last-updated__value"><span class="dot dot--live" aria-hidden="true"></span> <time
-                                id="last-updated-time">—</time></span>
+        <!-- CURRENT FOCUS -->
+        <section class="card card--focus">
+            <span class="eyebrow">Building</span>
+            <i class="fa-brands fa-github"></i>
+            <p class="quote-text">Pageify</p>
+        </section>
+
+        <!-- LINKS -->
+        <section class="card card--links">
+            <a class="link-row" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i><span>GitHub</span><span class="link-arrow">↗</span>
+            </a>
+            <a class="link-row" href="https://discord.com/" target="_blank" rel="noopener">
+                <i class="fa-brands fa-discord"></i><span>Discord</span><span class="link-arrow">↗</span>
+            </a>
+            <a class="link-row" href="mailto:you@example.com">
+                <i class="fa-brands fa-reddit"></i><span>Reddit</span><span class="link-arrow">↗</span>
+            </a>
+        </section>
+
+        <!-- CURRENTLY WATCHING -->
+        <section class="card card--watching">
+            <span class="eyebrow">Watching</span>
+            <p class="focus-text">Deep in whatever's airing this season.</p>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="card card--projects">
+            <div class="projects-list">
+
+                <a class="project" href="https://pageify.run.place/" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-index">01</span>
+                        <span class="project-arrow">↗</span>
                     </div>
-                </div>
-            </div>
-        </section>
+                    <div class="project-title">Pageify</div>
+                    <p class="project-desc">A lightweight page builder for sharing links and profiles without the
+                        bloat.</p>
+                    <div class="project-tags"><span>Web App</span><span>Product</span><span>Bot</span></div>
+                </a>
 
-        <!-- 02 — A NOTE -->
-        <section class="row note" id="note" data-index="02" data-label="A NOTE">
-            <div class="row__label">
-                <span class="row__num">02</span>
-                <span class="row__name">— A NOTE</span>
-            </div>
-            <div class="row__content">
-                <blockquote class="quote">
-                    Most of what I make starts as a fix for something that annoyed me.
-                </blockquote>
-                <span class="quote__rule" aria-hidden="true"></span>
-            </div>
-        </section>
-
-        <!-- 03 — PROJECTS -->
-        <section class="row projects" id="projects" data-index="03" data-label="PROJECTS">
-            <div class="row__label">
-                <span class="row__num">03</span>
-                <span class="row__name">— PROJECTS</span>
-            </div>
-            <div class="row__content">
-                <div class="panel-list" id="project-list">
-                    <!-- Project panels injected by script.js -->
-                </div>
-                <a href="#" class="view-all" id="view-all-projects">view all projects <span class="arrow">→</span></a>
-            </div>
-        </section>
-
-        <!-- 04 — GITHUB -->
-        <section class="row github" id="github" data-index="04" data-label="GITHUB">
-            <div class="row__label">
-                <span class="row__num">04</span>
-                <span class="row__name">— GITHUB</span>
-            </div>
-            <div class="row__content">
-                <div class="github__head">
-                    <div class="github__intro">
-                        <h2 class="github__handle" id="gh-username">@nekozam-i</h2>
-                        <p class="github__desc">Building in public since forever.</p>
+                <a class="project" href="https://www.instagram.com/nexa.internship/" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-index">02</span>
+                        <span class="project-arrow">↗</span>
                     </div>
-                    <a class="view-all view-all--inline" id="gh-link" href="https://github.com/NEKOZAM-I"
-                        target="_blank" rel="noopener">view github <span class="arrow">→</span></a>
-                </div>
+                    <div class="project-title">NEXA</div>
+                    <p class="project-desc">An internship started with friends, focused on STEM and medicine.</p>
+                    <div class="project-tags"><span>Website</span><span>Instagram</span></div>
+                </a>
 
-                <div class="github__stats" id="gh-stats">
-                    <div class="stat"><span class="stat__value" id="stat-repos">—</span><span
-                            class="stat__label">repos</span></div>
-                    <div class="stat"><span class="stat__value" id="stat-gists">—</span><span
-                            class="stat__label">gists</span></div>
-                    <div class="stat"><span class="stat__value" id="stat-followers">—</span><span
-                            class="stat__label">followers</span></div>
-                </div>
-
-                <div class="github__graph-wrap">
-                    <img id="gh-graph" class="github__graph" alt="NEKOZAM-I's GitHub contribution graph" src=""
-                        width="1200" height="160" loading="lazy">
-                </div>
-
-                <div class="github__pinned">
-                    <span class="github__pinned-label">Pinned Repositories</span>
-                    <div class="pinned-grid" id="pinned-grid">
-                        <!-- Repo cards injected by script.js -->
+                <a class="project" href="https://github.com/NEKOZAM-I/SnippetVault" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-index">03</span>
+                        <span class="project-arrow">↗</span>
                     </div>
-                </div>
+                    <div class="project-title">Snippet Vault</div>
+                    <p class="project-desc">Store, organize and search code snippets with syntax highlighting.</p>
+                    <div class="project-tags"><span>Web App</span><span>WIP</span></div>
+                </a>
+                
+                <a class="project" href="https://github.com/NEKOZAM-I/QR-Code-generator" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-index">04</span>
+                        <span class="project-arrow">↗</span>
+                    </div>
+                    <div class="project-title">QR Code Generator</div>
+                    <p class="project-desc">A simple QR Code generator with multiple features</p>
+                    <div class="project-tags"><span>Project</span><span>WIP</span></div>
+                </a>
             </div>
         </section>
 
-        <!-- 05 — DISCORD -->
-        <section class="row discord" id="discord" data-index="05" data-label="DISCORD">
-            <div class="row__label">
-                <span class="row__num">05</span>
-                <span class="row__name">— DISCORD</span>
+        <!-- GITHUB ACTIVITY -->
+        <section class="card card--graph">
+            <div class="graph-top">
+                <span class="eyebrow">Activity</span>
+                <a class="graph-link" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">View on
+                    GitHub ↗</a>
             </div>
-            <div class="row__content">
-                <div class="discord__card">
-                    <div class="discord__identity">
-                        <div class="discord__avatar">
-                            <span>N</span>
-                            <span class="discord__status" title="Online"></span>
-                        </div>
-                        <div class="discord__meta">
-                            <span class="discord__name">nekozami <span class="discord__online">Online</span></span>
-                            <p class="discord__bio">I probably replied instantly, or disappeared for 3 hours.<br>Let's
-                                talk about projects, Discord bots or random ideas.</p>
-                        </div>
-                    </div>
-                    <div class="discord__find">
-                        <span class="discord__find-label">you can find me in</span>
-                        <ul class="discord__find-list">
-                            <li><span class="tick tick--purple"></span> Coding Café</li>
-                            <li><span class="tick tick--blue"></span> Pythonic</li>
-                            <li><span class="tick tick--grey"></span> Open Source Hub</li>
-                            <li><span class="tick tick--grey"></span> Anime Lounge</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="graph-wrap">
+                <img class="graph-img" id="ghGraphImg" src="https://ghchart.rshah.org/7AA2F7/NEKOZAM-I"
+                    alt="Nekozami's GitHub contribution graph">
+            </div>
+            <div class="graph-fallback" id="ghGraphFallback">
+                Activity graph unavailable right now — <a href="https://github.com/NEKOZAM-I" target="_blank"
+                    rel="noopener">view it directly on GitHub</a>.
+            </div>
+            <div class="graph-legend">
+                <span>Less</span>
+                <span class="legend-swatch" data-level="0"></span>
+                <span class="legend-swatch" data-level="1"></span>
+                <span class="legend-swatch" data-level="2"></span>
+                <span class="legend-swatch" data-level="3"></span>
+                <span class="legend-swatch" data-level="4"></span>
+                <span>More</span>
             </div>
         </section>
-
-        <!-- 06 — CURRENTLY -->
-        <section class="row currently" id="currently" data-index="06" data-label="CURRENTLY">
-            <div class="row__label">
-                <span class="row__num">06</span>
-                <span class="row__name">— CURRENTLY</span>
-            </div>
-            <div class="row__content">
-                <div class="terminal">
-                    <div class="terminal__title">
-                        <h2>Building <span class="accent">Pageify</span>.</h2>
-                        <p>Making it faster, cleaner and more powerful every day.</p>
-                    </div>
-                    <div class="terminal__body" id="currently-list" aria-label="what I'm currently doing">
-                        <!-- lines injected by script.js -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 07 — LATEST THOUGHTS -->
-        <section class="row thoughts" id="thoughts" data-index="07" data-label="LATEST THOUGHTS">
-            <div class="row__label">
-                <span class="row__num">07</span>
-                <span class="row__name">— LATEST THOUGHTS</span>
-            </div>
-            <div class="row__content">
-                <div class="thoughts-grid" id="thoughts-grid">
-                    <!-- Post cards injected by script.js -->
-                </div>
-                <a href="#" class="view-all" id="view-all-posts">view all posts <span class="arrow">→</span></a>
-            </div>
-        </section>
-
-        <!-- 09 — CONTACT -->
-        <section class="row contact" id="contact" data-index="09" data-label="CONTACT">
-            <div class="row__label">
-                <span class="row__num">09</span>
-                <span class="row__name">— CONTACT</span>
-            </div>
-            <div class="row__content">
-                <div class="contact-list">
-                    <a href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener" class="contact-link">
-                        <span class="contact-link__label">GitHub</span>
-                        <span class="contact-link__value">NEKOZAM-I</span>
-                    </a>
-                    <a href="https://discord.com/users/nekozami" target="_blank" rel="noopener" class="contact-link">
-                        <span class="contact-link__label">Discord</span>
-                        <span class="contact-link__value">@nekozami</span>
-                    </a>
-                    <a href="mailto:hello@nekozami.dev" class="contact-link">
-                        <span class="contact-link__label">Email</span>
-                        <span class="contact-link__value">hello@nekozami.dev</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ENDING -->
-        <footer class="ending">
-            <p class="ending__text">Still building.<span class="ending__caret" aria-hidden="true">|</span></p>
-            <span class="ending__rule" aria-hidden="true"></span>
-        </footer>
-
     </main>
 
-    <script src="index.js"></script>
+    <footer class="site-footer">
+        <span>© 2026 Nekozami</span>
+        <span class="footer-dim">Built by hand, one grid cell at a time.</span>
+    </footer>
+
+    <script>
+        (function () {
+            const img = document.getElementById("ghGraphImg");
+            const fallback = document.getElementById("ghGraphFallback");
+            img.addEventListener("error", function () {
+                img.style.display = "none";
+                fallback.style.display = "block";
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
