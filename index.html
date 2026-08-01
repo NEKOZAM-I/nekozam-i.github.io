@@ -1,160 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEKOZAMI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="icon" href="images/favicon.jpg">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nekozami</title>
+<meta name="description" content="I build small, focused tools — mostly for Discord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <main class="grid">
+<div class="wrap">
 
-        <!-- INTRODUCTION -->
-        <section class="card card--intro">
-            <div class="intro-top">
-                <img class="intro-avatar"
-                    src="https://cdn.discordapp.com/avatars/1216744553533673579/archived/1528344022475739146/bbc1a2c9f4ffd4218cf85560bbc594b8.webp?size=1024"
-                    alt="">
-                <span class="status"><span class="status-dot"></span>Looking for PMs &amp; beta testers</span>
-            </div>
-            <h1 class="intro-name">NEKOZAMI</h1>
-            <p class="intro-text">“No social stability without individual stability.”
-            <br>― Aldous Huxley, Brave New World</p>
-        </section>
+  <header class="head">
+    <div class="head__id">
+      <span class="avatar">n</span>
+      <div>
+        <h1 class="head__name">nekozami</h1>
+        <p class="head__tag">I build small, focused tools — mostly for Discord.</p>
+      </div>
+    </div>
+    <a class="head__contact" href="mailto:hello@nekozami.dev">say hi ↗</a>
+  </header>
 
-        <!-- QUOTE -->
-        <section class="card card--quote">
-            <span class="eyebrow">This Website</span>
-            <i class="fa-brands fa-github"></i>
-            <p class="quote-text">Portfolio</p>
-        </section>
+  <main class="grid" id="grid">
+    <!-- cards injected + static, mixed sizes -->
 
-        <!-- CURRENT FOCUS -->
-        <section class="card card--focus">
-            <span class="eyebrow">Building</span>
-            <i class="fa-brands fa-github"></i>
-            <p class="quote-text">Pageify</p>
-        </section>
+    <article class="card card--identity">
+      <div class="card__row">
+        <span class="avatar avatar--sm">n</span>
+        <div>
+          <h2 class="card__title">nekozami</h2>
+          <span class="card__kicker">Explorer. Builder. Problem solver.</span>
+        </div>
+      </div>
+      <a class="card__link" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </article>
 
-        <!-- LINKS -->
-        <section class="card card--links">
-            <a class="link-row" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github"></i><span>GitHub</span><span class="link-arrow">↗</span>
-            </a>
-            <a class="link-row" href="https://discord.com/" target="_blank" rel="noopener">
-                <i class="fa-brands fa-discord"></i><span>Discord</span><span class="link-arrow">↗</span>
-            </a>
-            <a class="link-row" href="mailto:you@example.com">
-                <i class="fa-brands fa-reddit"></i><span>Reddit</span><span class="link-arrow">↗</span>
-            </a>
-        </section>
+    <article class="card card--quote">
+      <blockquote class="quote">If it works and nobody asked for it, is it still a feature?</blockquote>
+      <span class="quote__cite">— me, probably at 2am<sup>1</sup></span>
+      <span class="quote__note"><sup>1</sup> note to self, kept because it's true</span>
+    </article>
 
-        <!-- CURRENTLY WATCHING -->
-        <section class="card card--watching">
-            <span class="eyebrow">Watching</span>
-            <p class="focus-text">Deep in whatever's airing this season.</p>
-        </section>
+    <article class="card card--link">
+      <span class="card__icon">✎</span>
+      <h2 class="card__title">Blog</h2>
+      <p class="card__desc">Notes I post whenever something's worth writing down.</p>
+      <a class="card__cta" href="#thoughts">read →</a>
+    </article>
 
-        <!-- PROJECTS -->
-        <section class="card card--projects">
-            <div class="projects-list">
+    <article class="card card--link">
+      <span class="card__icon">◐</span>
+      <h2 class="card__title">Discord</h2>
+      <p class="card__desc">@nekozami — usually online, replies vary wildly.</p>
+      <a class="card__cta" href="https://discord.com/users/nekozami" target="_blank" rel="noopener">open →</a>
+    </article>
 
-                <a class="project" href="https://pageify.run.place/" target="_blank" rel="noopener">
-                    <div class="project-top">
-                        <span class="project-index">01</span>
-                        <span class="project-arrow">↗</span>
-                    </div>
-                    <div class="project-title">Pageify</div>
-                    <p class="project-desc">A lightweight page builder for sharing links and profiles without the
-                        bloat.</p>
-                    <div class="project-tags"><span>Web App</span><span>Product</span><span>Bot</span></div>
-                </a>
+    <article class="card card--currently">
+      <span class="card__kicker">currently</span>
+      <h2 class="card__title">Building <span class="accent">Pageify</span></h2>
+      <p class="card__desc">Making it faster, cleaner, and a little more mine every day.</p>
+    </article>
 
-                <a class="project" href="https://www.instagram.com/nexa.internship/" target="_blank" rel="noopener">
-                    <div class="project-top">
-                        <span class="project-index">02</span>
-                        <span class="project-arrow">↗</span>
-                    </div>
-                    <div class="project-title">NEXA</div>
-                    <p class="project-desc">An internship started with friends, focused on STEM and medicine.</p>
-                    <div class="project-tags"><span>Website</span><span>Instagram</span></div>
-                </a>
+    <div class="section-label" id="projects-label">projects</div>
 
-                <a class="project" href="https://github.com/NEKOZAM-I/SnippetVault" target="_blank" rel="noopener">
-                    <div class="project-top">
-                        <span class="project-index">03</span>
-                        <span class="project-arrow">↗</span>
-                    </div>
-                    <div class="project-title">Snippet Vault</div>
-                    <p class="project-desc">Store, organize and search code snippets with syntax highlighting.</p>
-                    <div class="project-tags"><span>Web App</span><span>WIP</span></div>
-                </a>
-                
-                <a class="project" href="https://github.com/NEKOZAM-I/QR-Code-generator" target="_blank" rel="noopener">
-                    <div class="project-top">
-                        <span class="project-index">04</span>
-                        <span class="project-arrow">↗</span>
-                    </div>
-                    <div class="project-title">QR Code Generator</div>
-                    <p class="project-desc">A simple QR Code generator with multiple features</p>
-                    <div class="project-tags"><span>Project</span><span>WIP</span></div>
-                </a>
-            </div>
-        </section>
+    <article class="card card--project" data-project="pageify">
+      <div class="card__row card__row--between">
+        <h2 class="card__title">Pageify</h2>
+        <span class="status status--active">active</span>
+      </div>
+      <p class="card__desc">A drag-and-free page builder for creators and small businesses.</p>
+      <div class="tags"><span>JavaScript</span><span>CSS</span><span>Bootstrap</span></div>
+      <div class="card__links"><a href="#">Live demo →</a><a href="#">GitHub →</a></div>
+    </article>
 
-        <!-- GITHUB ACTIVITY -->
-        <section class="card card--graph">
-            <div class="graph-top">
-                <span class="eyebrow">Activity</span>
-                <a class="graph-link" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">View on
-                    GitHub ↗</a>
-            </div>
-            <div class="graph-wrap">
-                <img class="graph-img" id="ghGraphImg" src="https://ghchart.rshah.org/7AA2F7/NEKOZAM-I"
-                    alt="Nekozami's GitHub contribution graph">
-            </div>
-            <div class="graph-fallback" id="ghGraphFallback">
-                Activity graph unavailable right now — <a href="https://github.com/NEKOZAM-I" target="_blank"
-                    rel="noopener">view it directly on GitHub</a>.
-            </div>
-            <div class="graph-legend">
-                <span>Less</span>
-                <span class="legend-swatch" data-level="0"></span>
-                <span class="legend-swatch" data-level="1"></span>
-                <span class="legend-swatch" data-level="2"></span>
-                <span class="legend-swatch" data-level="3"></span>
-                <span class="legend-swatch" data-level="4"></span>
-                <span>More</span>
-            </div>
-        </section>
-    </main>
+    <article class="card card--project" data-project="snippetvault">
+      <div class="card__row card__row--between">
+        <h2 class="card__title">SnippetVault</h2>
+        <span class="status status--active">active</span>
+      </div>
+      <p class="card__desc">A personal collection of code snippets I keep coming back to.</p>
+      <div class="tags"><span>JavaScript</span><span>Markdown</span></div>
+      <div class="card__links"><a href="#">GitHub →</a></div>
+    </article>
 
-    <footer class="site-footer">
-        <span>© 2026 Nekozami</span>
-        <span class="footer-dim">Built by hand, one grid cell at a time.</span>
-    </footer>
+    <article class="card card--project" data-project="qr">
+      <div class="card__row card__row--between">
+        <h2 class="card__title">QR Generator</h2>
+        <span class="status status--active">active</span>
+      </div>
+      <p class="card__desc">Clean QR codes, instantly. No sign-up, no tracking.</p>
+      <div class="tags"><span>JS</span><span>HTML</span><span>CSS</span></div>
+      <div class="card__links"><a href="#">Try it →</a></div>
+    </article>
 
-    <script>
-        (function () {
-            const img = document.getElementById("ghGraphImg");
-            const fallback = document.getElementById("ghGraphFallback");
-            img.addEventListener("error", function () {
-                img.style.display = "none";
-                fallback.style.display = "block";
-            });
-        })();
-    </script>
+    <article class="card card--project" data-project="age">
+      <div class="card__row card__row--between">
+        <h2 class="card__title">Age Calculator</h2>
+        <span class="status status--active">active</span>
+      </div>
+      <p class="card__desc">Your exact age, down to the day. Built in an evening, still gets used.</p>
+      <div class="tags"><span>JS</span><span>HTML</span><span>CSS</span></div>
+      <div class="card__links"><a href="#">Try it →</a></div>
+    </article>
 
+    <article class="card card--project card--muted">
+      <h2 class="card__title">More soon</h2>
+      <p class="card__desc">Something's usually brewing.</p>
+    </article>
+
+    <div class="section-label" id="github-label">github</div>
+
+    <article class="card card--wide card--github">
+      <div class="card__row card__row--between">
+        <div>
+          <h2 class="card__title">@nekozam-i</h2>
+          <span class="card__kicker">building in public, since forever</span>
+        </div>
+        <div class="gh-stats" id="gh-stats">
+          <span><b id="stat-repos">—</b> repos</span>
+          <span><b id="stat-followers">—</b> followers</span>
+        </div>
+      </div>
+      <img id="gh-graph" class="gh-graph" alt="nekozam-i's GitHub contribution graph" src="" width="1200" height="150" loading="lazy">
+    </article>
+
+    <div class="section-label" id="thoughts-label">latest thoughts</div>
+
+    <article class="card card--post">
+      <h2 class="card__title">Why I'm rebuilding Pageify's homepage</h2>
+      <p class="card__desc">The old layout worked, but it never felt like mine.</p>
+      <span class="card__meta">Jul 29, 2026 · 5 min</span>
+    </article>
+
+    <article class="card card--post">
+      <h2 class="card__title">Migrating Bootstrap to Tailwind, no build pipeline</h2>
+      <p class="card__desc">No npm, no Node — just the standalone CLI and patience.</p>
+      <span class="card__meta">Jul 21, 2026 · 6 min</span>
+    </article>
+
+    <div class="section-label" id="tools-label">tools I use</div>
+
+    <article class="card card--tool"><span class="card__icon">▤</span><h2 class="card__title">VS Code</h2></article>
+    <article class="card card--tool"><span class="card__icon">⌥</span><h2 class="card__title">Git</h2></article>
+    <article class="card card--tool"><span class="card__icon">✦</span><h2 class="card__title">Figma</h2></article>
+    <article class="card card--tool"><span class="card__icon">≡</span><h2 class="card__title">Tailwind CSS</h2></article>
+    <article class="card card--tool"><span class="card__icon">λ</span><h2 class="card__title">Python</h2></article>
+    <article class="card card--tool"><span class="card__icon">◆</span><h2 class="card__title">ColdFusion</h2></article>
+
+  </main>
+
+  <footer class="foot">
+    <span>© nekozami 2026</span>
+    <span>still building<span class="caret">|</span></span>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
-
 </html>
