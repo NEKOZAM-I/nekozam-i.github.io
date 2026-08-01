@@ -32,3 +32,52 @@ document.addEventListener("DOMContentLoaded", () => {
   initSpotlight();
   loadGitHub();
 });
+
+const pet = document.querySelector(".pet");
+
+// Create custom cursor
+const cursor = document.createElement("div");
+cursor.className = "custom-cursor";
+document.body.appendChild(cursor);
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+let catX = mouseX;
+let catY = mouseY;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+});
+
+function animate() {
+    // Smooth follow
+    catX += (mouseX - catX) * 0.1;
+    catY += (mouseY - catY) * 0.1;
+
+    // Face mouse direction
+    pet.style.transform = `translate(${catX - 24}px, ${catY - 20}px) scaleX(${mouseX > catX ? 1 : -1})`;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Make custom cursor grow over interactive elements
+const interactiveElements = document.querySelectorAll(
+  "a, button, input, textarea, select, [role='button'], .project, .card, .social-link"
+);
+
+interactiveElements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(2.2)";
+    });
+
+    el.addEventListener("mouseleave", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+});
