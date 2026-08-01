@@ -4,202 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEKOZAMI -- dev</title>
+    <title>NEKOZAMI</title>
+    <meta name="description" content="I build small, focused tools — mostly for Discord.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
     <link rel="icon" href="images/favicon.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-    </style>
 </head>
 
 <body>
 
-    <div class="wrap">
+    <div class="grain"></div>
 
-        <!-- PROFILE HEADER -->
-        <div class="profile">
-            <img class="profile-avatar"
-                src="https://cdn.discordapp.com/avatars/1216744553533673579/archived/1528344022475739146/bbc1a2c9f4ffd4218cf85560bbc594b8.webp?size=1024"
-                alt="Nekozami avatar">
-            <div>
-                <div class="profile-name">NEKOZAMI</div>
-                <div class="profile-tagline">I build small tools and spend too much time on Discord.</div>
-                <div class="profile-status"><span class="dot"></span>Looking for PMs and beta testers</div>
-            </div>
-        </div>
-
-        <!-- BENTO GRID -->
-        <div class="bento">
-
-            <div class="card card-quote">
-                <p>“Life is too short to waste any amount of time on wondering what other people think about you. In the first place, if they had better things going on in their lives, they wouldn't have the time to sit around and talk about you. What's important to me is not others' opinions of me, but what's important to me is my opinion of myself.”
-                <br>― C. JoyBell C.</p>
-                <div class="card-quote-foot">whaaaaaaaaaat</div>
-            </div>
-
-            <a class="card card-link" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">
-                <div class="card-link-top">
-                    <span class="card-icon"><i class="fa-brands fa-github"></i></span>
-                    <span class="card-arrow">↗</span>
-                </div>
-                <div>
-                    <div class="card-title">NEKOZAM-I</div>
-                    <div class="card-sub">GitHub</div>
-                </div>
-            </a>
-
-            <a class="card card-link" href="https://discord.com/users/1216744553533673579" target="_blank" rel="noopener">
-                <div class="card-link-top">
-                    <span class="card-icon"><i class="fa-brands fa-discord"></i></span>
-                    <span class="card-arrow">↗</span>
-                </div>
-                <div>
-                    <div class="card-title">_mrtoastie_1</div>
-                    <div class="card-sub">Discord</div>
-                </div>
-            </a>
-
-
-
-           <!-- <a class="card card-link" href="https://www.instagram.com/rayyan.vat/" target="_blank" rel="noopener">
-                <div class="card-link-top">
-                    <span class="card-icon"><i class="fa-brands fa-instagram"></i></span>
-                    <span class="card-arrow">↗</span>
-                </div>
-                <div>
-                    <div class="card-title">rayyan.vat</div>
-                    <div class="card-sub">Instagram</div>
-                </div>
-            </a>-->
-
-            <a class="card card-link" href="https://pageify.run.place/" target="_blank" rel="noopener">
-                <div class="card-link-top">
-                    <img src="images/logo.png" class="card-icon">
-                    <span class="card-arrow">↗</span>
-                </div>
-                <div>
-                    <div class="card-title">Pageify</div>
-                    <div class="card-sub">pageify.run.place</div>
-                </div>
-            </a>
-
-            <a class="card card-link" href="https://reddit.com/u/RevolutionarySea6143" target="_blank" rel="noopener">
-                <div class="card-link-top">
-                    <span class="card-icon"><i class="fa-brands fa-github"></i></span>
-                    <span class="card-arrow">↗</span>
-                </div>
-                <div>
-                    <div class="card-title">This Website</div>
-                    <div class="card-sub">Github Repo</div>
-                </div>
-            </a>
-
-          <!--  <a class="card card-link" href="https://open.spotify.com" target="_blank" rel="noopener">
-                <div class="card-link-top">
-                    <span class="card-icon"><i class="fa-brands fa-spotify"></i></span>
-                    <span class="card-arrow">↗</span>
-                </div>
-                <div>
-                    <div class="card-title">NEKOZAM-I</div>
-                    <div class="card-sub">Spotify</div>
-                </div>
-            </a>-->
-
-            <div class="card card-graph">
-                <div class="card-graph-top">
-                    <span class="card-graph-title">GitHub activity</span>
-                    <a class="card-graph-sub" href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">View on
-                        GitHub ↗</a>
-                </div>
-                <div class="gh-graph-wrap">
-                    <img class="gh-graph-img" id="ghGraphImg" src="https://ghchart.rshah.org/NEKOZAM-I"
-                        alt="Nekozami's GitHub contribution graph">
-                </div>
-                <div class="gh-graph-fallback" id="ghGraphFallback">
-                    Activity graph unavailable right now — <a href="https://github.com/NEKOZAM-I" target="_blank"
-                        rel="noopener">view it directly on GitHub</a>.
-                </div>
-                <div class="gh-graph-legend">
-                    <span>Less</span>
-                    <span class="gh-legend-swatch" data-level="0"></span>
-                    <span class="gh-legend-swatch" data-level="1"></span>
-                    <span class="gh-legend-swatch" data-level="2"></span>
-                    <span class="gh-legend-swatch" data-level="3"></span>
-                    <span class="gh-legend-swatch" data-level="4"></span>
-                    <span>More</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECTS -->
-        <div class="label-row">
-            <span class="label">Projects</span>
-            <span class="label-sub">A few things I’ve built and kept maintaining.</span>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-top"><span class="project-index">01</span></div>
-                <div class="d-flex">
-                    <div class="project-title">Pageify</div>
-                    <a href="https://pageify.run.place/" class="project-arrow" target="_blank">↗</a>
-                </div>
-                <div class="project-desc">A lightweight page builder for sharing links and profiles without the bloat.
-                </div>
-                <div class="project-tags"><span>Web App</span><span>Product</span><span>Bot</span></div>
-            </div>
-            <div class="project-card">
-                <div class="project-top"><span class="project-index">02</span></div>
-                <div class="d-flex">
-                    <div class="project-title">NEXA</div>
-                    <a href="https://www.instagram.com/nexa.internship/" class="project-arrow" target="_blank">↗</a>
-                </div>
-                <div class="project-desc">An Internship started by me and my friends related to STEM and Medicine..
-                </div>
-                <div class="project-tags"><span>Website</span><span>Open Source</span></div>
-            </div>
-            <div class="project-card is-unlinked">
-                <div class="project-top"><span class="project-index">03</span></div>
-                <div class="project-title">Snippet Vault</div>
-                <div class="project-desc">Store, organize and search code snippets with syntax highlighting.</div>
-                <div class="project-tags"><span>Community</span><span>WIP</span></div>
-            </div>
-            <div class="project-card is-unlinked">
-                <div class="project-top"><span class="project-index">04</span></div>
-                <div class="project-title">QR Code Generator</div>
-                <div class="project-desc">One of my first projects. Always improving.
-                </div>
-                <div class="project-tags"><span>Open Slot</span></div>
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-copy">© 2026 🩶 Nekozami. All rights reserved.</div>
-            <ul class="footer-links">
-                <li><a href="https://github.com/NEKOZAM-I" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="https://pageify.run.place/" target="_blank" rel="noopener">Pageify</a></li>
-            </ul>
-        </footer>
-
+    <!-- cursor buddy: a small pixel cat that chases the mouse -->
+    <div class="pet" id="pet" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges">
+            <rect x="2" y="2" width="2" height="2" fill="#7AA2F7" />
+            <rect x="12" y="2" width="2" height="2" fill="#7AA2F7" />
+            <rect x="3" y="4" width="10" height="7" fill="#7AA2F7" />
+            <rect x="1" y="5" width="2" height="5" fill="#7AA2F7" />
+            <rect x="13" y="5" width="2" height="5" fill="#7AA2F7" />
+            <rect x="5" y="6" width="1" height="2" fill="#111111" />
+            <rect x="10" y="6" width="1" height="2" fill="#111111" />
+            <rect x="7" y="9" width="2" height="1" fill="#111111" />
+            <rect x="3" y="11" width="2" height="2" fill="#7AA2F7" />
+            <rect x="11" y="11" width="2" height="2" fill="#7AA2F7" />
+        </svg>
     </div>
 
-    <script>
-        (function () {
-            const img = document.getElementById("ghGraphImg");
-            const fallback = document.getElementById("ghGraphFallback");
-            img.addEventListener("error", function () {
-                img.style.display = "none";
-                fallback.style.display = "block";
-            });
-        })();
-    </script>
-    
+    <!-- scattered decorative pixel icons — parallax with the cursor -->
+    <div class="floaters" id="floaters" aria-hidden="true">
+        <svg class="floater" data-depth="18" style="top:8%; left:6%" viewBox="0 0 8 8" width="34" height="34"
+            shape-rendering="crispEdges">
+            <rect x="3" y="0" width="2" height="2" fill="#f7c948" />
+            <rect x="1" y="2" width="6" height="2" fill="#f7c948" />
+            <rect x="0" y="4" width="8" height="2" fill="#f7c948" />
+            <rect x="2" y="6" width="4" height="2" fill="#f7c948" />
+        </svg>
+        <svg class="floater" data-depth="34" style="top:14%; right:10%" viewBox="0 0 8 8" width="26" height="26"
+            shape-rendering="crispEdges">
+            <rect x="1" y="1" width="2" height="2" fill="#ff7a9c" />
+            <rect x="5" y="1" width="2" height="2" fill="#ff7a9c" />
+            <rect x="0" y="3" width="8" height="2" fill="#ff7a9c" />
+            <rect x="2" y="5" width="4" height="2" fill="#ff7a9c" />
+        </svg>
+        <svg class="floater" data-depth="26" style="top:60%; left:4%" viewBox="0 0 8 8" width="30" height="30"
+            shape-rendering="crispEdges">
+            <rect x="3" y="0" width="2" height="8" fill="#7AA2F7" />
+            <rect x="0" y="3" width="8" height="2" fill="#7AA2F7" />
+        </svg>
+        <svg class="floater" data-depth="12" style="top:70%; right:8%" viewBox="0 0 8 8" width="24" height="24"
+            shape-rendering="crispEdges">
+            <rect x="1" y="2" width="2" height="2" fill="#8bd450" />
+            <rect x="5" y="2" width="2" height="2" fill="#8bd450" />
+            <rect x="1" y="4" width="6" height="2" fill="#8bd450" />
+            <rect x="3" y="6" width="2" height="2" fill="#8bd450" />
+        </svg>
+    </div>
 
-    <div id="brainly-extension-root-automatic"></div>
+    <nav class="nav">
+        <a href="#projects">projects</a>
+        <a href="#github">github</a>
+        <a href="mailto:hello@nekozami.dev">say hi</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="hero__name">NEKOZAMI<span class="blink">_</span></h1>
+        <p class="hero__tag">I build small, focused tools — mostly for Discord.</p>
+    </header>
+
+    <main class="content">
+
+        <section class="bento" id="intro-bento">
+            <article class="pcard pcard--quote">
+                <p class="quote">“If you want to rebel, rebel from inside the system.That's much more powerful than rebelling outside the system.”</p>
+                <span class="quote__cite">― Marie Lu, Legend</span>
+            </article>
+
+            <article class="pcard">
+                <span class="pcard__kicker">currently</span>
+                <h2 class="pcard__title">Building <span class="accent">Pageify</span></h2>
+                <p class="pcard__desc">Your very own pages avaialble online. No embed fuss.</p>
+            </article>
+
+            <article class="pcard pcard--discord">
+                <img class="pixel-icon--discord" src="images/favicon.jpg">
+                <h2 class="pcard__title">@NEKOZAMI</h2>
+                <p class="pcard__desc">usually online · replies vary wildly</p>
+                <a class="pcard__cta" href="https://discord.com/users/1216744553533673579" target="_blank" rel="noopener">open
+                    →</a>
+            </article>
+        </section>
+
+        <div class="section-label" id="projects">projects.exe</div>
+
+        <section class="bento">
+            <article class="pcard pcard--featured" data-project="pageify">
+                <div class="pcard__row">
+                    <h2 class="pcard__title">Pageify</h2>
+                    <span class="status">● active</span>
+                </div>
+                <p class="pcard__desc">A drag-and-free page builder for discord — no code
+                    required.</p>
+                <div class="tags"><span>JavaScript</span><span>CSS</span><span>Bootstrap</span></div>
+                <div class="pcard__links"><a href="#">website →</a><a href="#">github →</a></div>
+            </article>
+
+            <article class="pcard" data-project="snippetvault">
+                <div class="pcard__row">
+                    <h2 class="pcard__title">Age Calculator</h2>
+                    <span class="status">● active</span>
+                </div>
+                <p class="pcard__desc">Your exact age, down to the day.</p>
+                <div class="tags"><span>JS</span><span>HTML</span></div>
+                <div class="pcard__links"><a href="#">github →</a></div>
+            </article>
+
+            <article class="pcard" data-project="qr">
+                <div class="pcard__row">
+                    <h2 class="pcard__title">QR Generator</h2>
+                    <span class="status">● active</span>
+                </div>
+                <p class="pcard__desc">Clean QR codes, instantly.</p>
+                <div class="tags"><span>JS</span><span>HTML</span></div>
+                <div class="pcard__links"><a href="#">github →</a></div>
+            </article>
+
+            <article class="pcard pcard--featured" data-project="age">
+                <div class="pcard__row">
+                    <h2 class="pcard__title">SnippetVault</h2>
+                    <span class="status">● active</span>
+                </div>
+                <p class="pcard__desc">Code snippets I keep coming back to.</p>
+                <div class="tags"><span>JS</span><span>Markdown</span></div>
+                <div class="pcard__links"><a href="#">github →</a></div>
+            </article>
+
+            <article class="pcard pcard--featured" data-project="qr">
+                <div class="pcard__row">
+                    <h2 class="pcard__title">Stackt</h2>
+                    <span class="status">● active</span>
+                </div>
+                <p class="pcard__desc">A Google Drive clone</p>
+                <div class="tags"><span>JS</span><span>HTML</span><span>Python</span></div>
+                <div class="pcard__links"><a href="#">github →</a></div>
+            </article>
+            <article class="pcard pcard--muted">
+                <h2 class="pcard__title">more soon</h2>
+                <p class="pcard__desc">something's brewing</p>
+            </article>
+            
+        </section>
+
+        <div class="section-label" id="github">github.log</div>
+
+        <section class="bento">
+            <article class="pcard pcard--full">
+                <div class="pcard__row">
+                    <div>
+                        <h2 class="pcard__title">@nekozam-i</h2>
+                        <span class="pcard__kicker">building in public, since forever</span>
+                    </div>
+                    <div class="gh-stats" id="gh-stats">
+                        <span><b id="stat-repos">—</b> repos</span>
+                        <span><b id="stat-followers">—</b> followers</span>
+                    </div>
+                </div>
+                <img id="gh-graph" class="gh-graph" alt="nekozam-i's GitHub contribution graph" src="" width="1200"
+                    height="120" loading="lazy">
+            </article>
+        </section>
+
+        <div class="section-label">thoughts.md</div>
+
+        <section class="bento">
+            <article class="pcard">
+                <h2 class="pcard__title">Why I'm rebuilding Pageify's homepage</h2>
+                <p class="pcard__desc">The old layout worked, but never felt like mine.</p>
+                <span class="pcard__meta">Jul 29 · 5 min</span>
+            </article>
+            <article class="pcard">
+                <h2 class="pcard__title">Migrating Bootstrap to Tailwind, no build pipeline</h2>
+                <p class="pcard__desc">No npm, no Node — just the CLI and patience.</p>
+                <span class="pcard__meta">Jul 21 · 6 min</span>
+            </article>
+        </section>
+
+        <div class="section-label">tools.json</div>
+
+        <section class="bento bento--tools">
+            <article class="pcard pcard--tool"><span class="card__icon">▤</span>VS Code</article>
+            <article class="pcard pcard--tool"><span class="card__icon">⌥</span>Git</article>
+            <article class="pcard pcard--tool"><span class="card__icon">✦</span>Figma</article>
+            <article class="pcard pcard--tool"><span class="card__icon">≡</span>Tailwind</article>
+            <article class="pcard pcard--tool"><span class="card__icon">λ</span>Python</article>
+            <article class="pcard pcard--tool"><span class="card__icon">◆</span>ColdFusion</article>
+        </section>
+
+        <footer class="foot">
+            <span>© nekozami 2026</span>
+            <span>still building<span class="blink">_</span></span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
