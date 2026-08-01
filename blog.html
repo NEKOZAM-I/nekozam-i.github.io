@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog — NEKOZAMI</title>
+    <meta name="description" content="Notes on Pageify, Discord tools, and whatever I'm building.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/favicon.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+
+    <div class="grain"></div>
+
+    <div class="pet" id="pet" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges">
+            <rect x="2" y="2" width="2" height="2" fill="#7AA2F7" />
+            <rect x="12" y="2" width="2" height="2" fill="#7AA2F7" />
+            <rect x="3" y="4" width="10" height="7" fill="#7AA2F7" />
+            <rect x="1" y="5" width="2" height="5" fill="#7AA2F7" />
+            <rect x="13" y="5" width="2" height="5" fill="#7AA2F7" />
+            <rect x="5" y="6" width="1" height="2" fill="#111111" />
+            <rect x="10" y="6" width="1" height="2" fill="#111111" />
+            <rect x="7" y="9" width="2" height="1" fill="#111111" />
+            <rect x="3" y="11" width="2" height="2" fill="#7AA2F7" />
+            <rect x="11" y="11" width="2" height="2" fill="#7AA2F7" />
+        </svg>
+    </div>
+
+    <nav class="nav">
+        <a href="index.html#projects">projects</a>
+        <a href="index.html#github">github</a>
+        <a href="https://www.instagram.com/rayyan.vat">say hi</a>
+    </nav>
+
+    <div class="crumbs">
+        <a href="index.html">home</a>
+        <span class="crumbs__sep">›</span>
+        <span class="crumbs__current">blog</span>
+    </div>
+
+    <header class="blog-hero">
+        <h1 class="blog-hero__title">thoughts.md</h1>
+        <p class="blog-hero__tag">Notes I post whenever something's worth writing down.</p>
+    </header>
+
+    <main class="content">
+        <div class="post-list">
+
+            <a class="post-row" href="posts/pageify-homepage-redesign.html">
+                <div>
+                    <h2 class="post-row__title">Why I'm rebuilding Pageify's homepage</h2>
+                    <p class="post-row__desc">The old layout worked, but it never felt like mine.</p>
+                </div>
+                <span class="post-row__meta">Jul 29 · 5 min</span>
+            </a>
+
+        </div>
+
+        <footer class="foot">
+            <span>© nekozami 2026</span>
+            <span>still building<span class="blink">_</span></span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
