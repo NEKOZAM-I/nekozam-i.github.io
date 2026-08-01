@@ -15,7 +15,22 @@ function initSpotlight() {
 
 async function loadGitHub() {
     const graph = document.getElementById("gh-graph");
-    graph.src = `https://ghchart.rshah.org/7AA2F7/${GITHUB_USERNAME}`;
+    const chartUrl = `https://ghchart.rshah.org/7AA2F7/${GITHUB_USERNAME}`;
+
+    try {
+        const res = await fetch(chartUrl);
+        if (!res.ok) throw new Error("chart fetch failed");
+        let svgText = await res.text();
+
+        svgText = svgText.replace(/fill="(#fff(?:fff)?|white)"/gi, 'fill="#161616"');
+
+        const dataUrl = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgText);
+        graph.src = dataUrl;
+    } catch (err) {
+        console.warn("Couldn't recolor GitHub graph directly, using CSS fallback.", err);
+        graph.src = chartUrl;
+        graph.style.filter = "invert(0.92) hue-rotate(180deg) saturate(1.4)";
+    }
 
     try {
         const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
@@ -55,12 +70,13 @@ document.addEventListener("mousemove", (e) => {
 });
 
 function animate() {
-    // Smooth follow
+    // Smooth follow, offset further from the cursor so it doesn't sit on top of it
     catX += (mouseX - catX) * 0.1;
     catY += (mouseY - catY) * 0.1;
 
-    // Face mouse direction
-    pet.style.transform = `translate(${catX - 24}px, ${catY - 20}px) scaleX(${mouseX > catX ? 1 : -1})`;
+    // Face mouse direction — trails behind at a real distance instead of hugging the pointer
+    const offsetX = mouseX > catX ? 46 : -46;
+    pet.style.transform = `translate(${catX - 24 + offsetX}px, ${catY + 40}px) scaleX(${mouseX > catX ? 1 : -1})`;
 
     requestAnimationFrame(animate);
 }
