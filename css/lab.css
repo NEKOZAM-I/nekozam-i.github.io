@@ -1,8 +1,3 @@
-/* =========================================================
-   lab.css — additive only. Reuses the same CSS variables
-   already defined in style.css (loaded alongside this file).
-   ========================================================= */
-
 .lab-hero {
     position: relative;
     z-index: 2;
