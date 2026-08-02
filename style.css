@@ -151,8 +151,17 @@ a {
     position: absolute;
     image-rendering: pixelated;
     opacity: .8;
-    transition: transform 120ms linear;
     will-change: transform;
+    animation: up-down 1.5s ease-in-out infinite;
+}
+
+@keyframes up-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
 }
 
 @media (max-width: 720px) {
