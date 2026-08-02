@@ -537,6 +537,24 @@ a:focus-visible {
         font-size: 10px;
     }
 
+    .pcard--quote {
+        grid-column: 1 / -1;
+    }
+
+    .pcard--full .pcard__row {
+        display: none;
+    }
+
+    .pcard--full {
+        overflow: hidden;
+    }
+
+    .gh-graph {
+        width: 200%;
+        max-width: 200%;
+        margin-left: -100%;
+    }
+
     .foot {
         flex-direction: column;
         gap: 6px;
