@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab — NEKOZAMI</title>
+    <meta name="description" content="Unfinished ideas, experiments, and chaos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/favicon.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="lab.css">
+</head>
+
+<body>
+
+    <div class="grain"></div>
+
+    <div class="pet" id="pet" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges">
+            <rect x="2" y="2" width="2" height="2" fill="#7AA2F7" />
+            <rect x="12" y="2" width="2" height="2" fill="#7AA2F7" />
+            <rect x="3" y="4" width="10" height="7" fill="#7AA2F7" />
+            <rect x="1" y="5" width="2" height="5" fill="#7AA2F7" />
+            <rect x="13" y="5" width="2" height="5" fill="#7AA2F7" />
+            <rect x="5" y="6" width="1" height="2" fill="#111111" />
+            <rect x="10" y="6" width="1" height="2" fill="#111111" />
+            <rect x="7" y="9" width="2" height="1" fill="#111111" />
+            <rect x="3" y="11" width="2" height="2" fill="#7AA2F7" />
+            <rect x="11" y="11" width="2" height="2" fill="#7AA2F7" />
+        </svg>
+    </div>
+
+    <nav class="nav">
+        <a href="index.html#projects">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="lab.html">Lab</a>
+        <a href="https://www.instagram.com/rayyan.vat">say hi</a>
+    </nav>
+
+    <div class="crumbs">
+        <a href="index.html">home</a>
+        <span class="crumbs__sep">›</span>
+        <span class="crumbs__current">lab</span>
+    </div>
+
+    <header class="lab-hero">
+        <span class="lab-badge">experimental</span>
+        <h1 class="lab-hero__title">/lab</h1>
+        <p class="lab-hero__tag">unfinished ideas, half-built experiments, things that might break.</p>
+    </header>
+
+    <main class="content">
+
+        <div class="experiment">
+            <div class="experiment__head">
+                <h2 class="experiment__title">01 — particles.js (from scratch)</h2>
+                <span class="experiment__status experiment__status--stable">stable</span>
+            </div>
+            <p class="experiment__desc">A tiny canvas particle system, no library. Move your mouse over it — particles
+                scatter, and nearby ones link up.</p>
+            <canvas class="particles-canvas" id="particles-canvas"></canvas>
+        </div>
+
+        <div class="experiment">
+            <div class="experiment__head">
+                <h2 class="experiment__title">02 — 3D tilt cards</h2>
+                <span class="experiment__status experiment__status--stable">stable</span>
+            </div>
+            <p class="experiment__desc">Cards tilt toward your cursor in 3D space. Might add this to the real project
+                cards eventually.</p>
+            <div class="tilt-row">
+                <div class="tilt-card"><span class="tilt-card__glyph">◆</span><span class="tilt-card__label">hover
+                        me</span></div>
+                <div class="tilt-card"><span class="tilt-card__glyph">▲</span><span class="tilt-card__label">and
+                        me</span></div>
+                <div class="tilt-card"><span class="tilt-card__glyph">●</span><span class="tilt-card__label">me
+                        too</span></div>
+            </div>
+        </div>
+
+        <div class="experiment">
+            <div class="experiment__head">
+                <h2 class="experiment__title">03 — pixel-dissolve page transition</h2>
+                <span class="experiment__status experiment__status--wip">wip</span>
+            </div>
+            <p class="experiment__desc">Testing a transition for future page navigation — dissolves into pixels
+                instead of a plain fade.</p>
+            <div class="transition-demo">
+                <div id="transition-panel" class="transition-demo__panel">
+                    <b>view A</b>this is the panel you started on
+                </div>
+                <div class="transition-grid" id="transition-grid"></div>
+            </div>
+            <div class="lab-btn-row">
+                <button class="lab-btn" id="transition-btn-a" type="button">view A</button>
+                <button class="lab-btn" id="transition-btn-b" type="button">view B</button>
+            </div>
+        </div>
+
+        <div class="experiment">
+            <div class="experiment__head">
+                <h2 class="experiment__title">04 — discord widget</h2>
+                <span class="experiment__status experiment__status--wip">wip</span>
+            </div>
+            <p class="experiment__desc">Mocked up for now — I haven't turned on the real widget for my server yet, so
+                this is static.</p>
+            <div class="discord-widget">
+                <div class="discord-widget__server">
+                    <span class="discord-widget__icon"></span>
+                    <div>
+                        <div class="discord-widget__name">nekozami's lab</div>
+                        <div class="discord-widget__count">● 3 online</div>
+                    </div>
+                </div>
+                <div class="discord-widget__members">
+                    <div class="discord-widget__member"><span class="discord-widget__dot"></span>nekozami</div>
+                    <div class="discord-widget__member"><span
+                            class="discord-widget__dot discord-widget__dot--idle"></span>a friend</div>
+                    <div class="discord-widget__member"><span
+                            class="discord-widget__dot discord-widget__dot--dnd"></span>someone building something</div>
+                </div>
+                <p class="discord-widget__note">note: swap this for the real embed once server widgets are on —
+                    discord.com/widget?id=YOUR_SERVER_ID&theme=dark</p>
+            </div>
+        </div>
+
+        <div class="experiment">
+            <div class="experiment__head">
+                <h2 class="experiment__title">05 — fake terminal</h2>
+                <span class="experiment__status experiment__status--stable">stable</span>
+            </div>
+            <p class="experiment__desc">Type <code>help</code> to see what it knows. It's not much.</p>
+            <div class="lab-terminal" id="lab-terminal-log">
+                <div class="lab-terminal__line">nekozami-lab terminal v0.1 — type "help" to begin</div>
+            </div>
+            <div class="lab-terminal__input-row">
+                <input class="lab-terminal__input" id="lab-terminal-input" type="text" autocomplete="off"
+                    spellcheck="false" placeholder="type a command...">
+            </div>
+        </div>
+
+        <p class="egg-hint">↑ ↑ ↓ ↓ ← → ← → — try it.</p>
+
+        <footer class="foot">
+            <span>© nekozami 2026</span>
+            <span>still building<span class="blink">_</span></span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="lab.js"></script>
+</body>
+
+</html>

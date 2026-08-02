@@ -1,0 +1,366 @@
+/* =========================================================
+   lab.css — additive only. Reuses the same CSS variables
+   already defined in style.css (loaded alongside this file).
+   ========================================================= */
+
+.lab-hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px 50px;
+}
+
+.lab-hero__title {
+    font-family: var(--font-pixel);
+    font-size: clamp(22px, 4.5vw, 34px);
+    margin: 0 0 14px;
+    text-shadow: 3px 3px 0 rgba(122, 162, 247, .25);
+}
+
+.lab-hero__tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.lab-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: .05em;
+    color: #f7c948;
+    border: 1px solid #f7c948;
+    padding: 2px 8px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.experiment {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    padding: 20px;
+    margin-bottom: var(--gap);
+    clip-path: polygon(0 var(--notch), var(--notch) var(--notch), var(--notch) 0,
+            calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch),
+            100% calc(100% - var(--notch)), calc(100% - var(--notch)) calc(100% - var(--notch)), calc(100% - var(--notch)) 100%,
+            var(--notch) 100%, var(--notch) calc(100% - var(--notch)), 0 calc(100% - var(--notch)));
+}
+
+.experiment__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.experiment__title {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0;
+    color: var(--text);
+}
+
+.experiment__status {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.experiment__status--wip {
+    color: #f7c948;
+}
+
+.experiment__status--stable {
+    color: #8bd450;
+}
+
+.experiment__status--broken {
+    color: #ff7a9c;
+}
+
+.experiment__desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin: 0 0 16px;
+}
+
+/* ---------- 01 particles ---------- */
+
+.particles-canvas {
+    display: block;
+    width: 100%;
+    height: 220px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    cursor: none;
+}
+
+/* ---------- 02 tilt cards ---------- */
+
+.tilt-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    perspective: 700px;
+}
+
+.tilt-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 18px 14px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 120ms ease-out, border-color var(--dur);
+    will-change: transform;
+}
+
+.tilt-card:hover {
+    border-color: var(--accent);
+}
+
+.tilt-card__glyph {
+    font-family: var(--font-pixel);
+    font-size: 20px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+    transform: translateZ(20px);
+}
+
+.tilt-card__label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-secondary);
+    transform: translateZ(10px);
+}
+
+@media (max-width: 460px) {
+    .tilt-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- 03 page transition ---------- */
+
+.transition-demo {
+    position: relative;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.transition-demo__panel {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.transition-demo__panel b {
+    display: block;
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.transition-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.transition-grid span {
+    background: var(--accent);
+    transform: scale(0);
+}
+
+.lab-btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    justify-content: center;
+}
+
+.lab-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: color var(--dur), border-color var(--dur);
+}
+
+.lab-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ---------- 04 discord widget ---------- */
+
+.discord-widget {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 16px;
+}
+
+.discord-widget__server {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.discord-widget__icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    clip-path: polygon(20% 0, 80% 0, 100% 30%, 100% 70%, 70% 100%, 60% 80%, 40% 80%, 30% 100%, 0 70%, 0 30%);
+    flex-shrink: 0;
+}
+
+.discord-widget__name {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.discord-widget__count {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: #8bd450;
+}
+
+.discord-widget__members {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.discord-widget__member {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-secondary);
+}
+
+.discord-widget__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8bd450;
+    flex-shrink: 0;
+}
+
+.discord-widget__dot--idle {
+    background: #f7c948;
+}
+
+.discord-widget__dot--dnd {
+    background: #ff7a9c;
+}
+
+.discord-widget__note {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: var(--text-tertiary);
+}
+
+/* ---------- 05 terminal ---------- */
+
+.lab-terminal {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    height: 180px;
+    overflow-y: auto;
+}
+
+.lab-terminal__line {
+    margin-bottom: 4px;
+    line-height: 1.6;
+}
+
+.lab-terminal__line--cmd::before {
+    content: '> ';
+    color: var(--accent);
+}
+
+.lab-terminal__input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.lab-terminal__input-row::before {
+    content: '$';
+    color: var(--accent);
+}
+
+.lab-terminal__input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+/* ---------- 06 easter egg ---------- */
+
+.egg-hint {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-tertiary);
+    text-align: center;
+    margin: 40px 0 10px;
+}
+
+.cat-rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+.cat-rain span {
+    position: absolute;
+    top: -30px;
+    font-size: 20px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}

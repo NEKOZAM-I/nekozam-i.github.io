@@ -1,0 +1,234 @@
+/* =========================================================
+   blog.css — additive only. Does not touch style.css.
+   Reuses the same CSS variables (:root is already defined in
+   style.css, which this file is always loaded alongside).
+   ========================================================= */
+
+/* ---------- breadcrumb ---------- */
+
+.crumbs {
+    position: relative;
+    z-index: 2;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 34px 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-tertiary);
+}
+
+.crumbs a {
+    color: var(--text-secondary);
+    transition: color var(--dur);
+}
+
+.crumbs a:hover {
+    color: var(--accent);
+}
+
+.crumbs__sep {
+    color: var(--text-tertiary);
+}
+
+.crumbs__current {
+    color: var(--accent);
+}
+
+/* ---------- blog listing page ---------- */
+
+.blog-hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px 50px;
+}
+
+.blog-hero__title {
+    font-family: var(--font-pixel);
+    font-size: clamp(22px, 4.5vw, 34px);
+    margin: 0 0 14px;
+    text-shadow: 3px 3px 0 rgba(122, 162, 247, .25);
+}
+
+.blog-hero__tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.post-row {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    padding: 20px 22px;
+    clip-path: polygon(0 var(--notch), var(--notch) var(--notch), var(--notch) 0,
+            calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch),
+            100% calc(100% - var(--notch)), calc(100% - var(--notch)) calc(100% - var(--notch)), calc(100% - var(--notch)) 100%,
+            var(--notch) 100%, var(--notch) calc(100% - var(--notch)), 0 calc(100% - var(--notch)));
+    transition: border-color var(--dur), transform var(--dur);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.post-row:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--border);
+}
+
+.post-row__title {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 6px;
+    color: var(--text);
+}
+
+.post-row__desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.post-row__meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ---------- individual post page ---------- */
+
+.post {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 26px 20px 100px;
+}
+
+.post-banner {
+    position: relative;
+    border: 2px solid var(--border);
+    padding: 56px 32px;
+    margin-bottom: 32px;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(122, 162, 247, .35), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(255, 122, 156, .3), transparent 55%),
+        radial-gradient(circle at 60% 20%, rgba(139, 212, 80, .25), transparent 50%),
+        var(--surface);
+    clip-path: polygon(0 var(--notch), var(--notch) var(--notch), var(--notch) 0,
+            calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch),
+            100% calc(100% - var(--notch)), calc(100% - var(--notch)) calc(100% - var(--notch)), calc(100% - var(--notch)) 100%,
+            var(--notch) 100%, var(--notch) calc(100% - var(--notch)), 0 calc(100% - var(--notch)));
+}
+
+.post-banner__title {
+    position: relative;
+    font-family: var(--font-pixel);
+    font-size: clamp(18px, 3.4vw, 26px);
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .5);
+}
+
+.post-dek {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 6px;
+}
+
+.post-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin: 0 0 30px;
+}
+
+.post-body {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--text);
+}
+
+.post-body p {
+    margin: 0 0 20px;
+}
+
+.post-body h2 {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    margin: 36px 0 14px;
+    color: var(--text);
+}
+
+.post-body code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    color: var(--accent);
+}
+
+.post-body pre {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 0 0 24px;
+    line-height: 1.6;
+}
+
+.post-body blockquote {
+    margin: 0 0 24px;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent);
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.post-foot-nav {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+.post-foot-nav a {
+    color: var(--text-secondary);
+    transition: color var(--dur);
+}
+
+.post-foot-nav a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 460px) {
+    .post-banner {
+        padding: 40px 20px;
+    }
+
+    .post-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

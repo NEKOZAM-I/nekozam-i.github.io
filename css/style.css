@@ -1,0 +1,562 @@
+:root {
+    --bg: #111111;
+    --surface: #181818;
+    --border: #2c2c2c;
+    --border-hover: #7AA2F7;
+    --text: #FFFFFF;
+    --text-secondary: #9B9B9B;
+    --text-tertiary: #616161;
+    --accent: #7AA2F7;
+
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+
+    --notch: 8px;
+    --gap: 12px;
+    --dur: 220ms;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--accent);
+    color: #0c0c0c;
+}
+
+html {
+    background: var(--bg);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.55;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+/* Custom cursor */
+.custom-cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #7AA2F7;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+.project,
+.card,
+.social-link,
+[role="button"] {
+    cursor: none !important;
+}
+
+/* Cat */
+.pet {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+    z-index: 99998;
+    image-rendering: pixelated;
+    transform-origin: center;
+}
+
+@media (hover: none) {
+    body {
+        cursor: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 998;
+    opacity: .05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- pixel notch shape, used on every card ---------- */
+
+.pixel-frame {
+    clip-path: polygon(0 var(--notch), var(--notch) var(--notch), var(--notch) 0,
+            calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch),
+            100% calc(100% - var(--notch)), calc(100% - var(--notch)) calc(100% - var(--notch)), calc(100% - var(--notch)) 100%,
+            var(--notch) 100%, var(--notch) calc(100% - var(--notch)), 0 calc(100% - var(--notch)));
+}
+
+/* ---------- cursor pet ---------- */
+
+.pet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+    transform: translate(-100px, -100px);
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 6px rgba(122, 162, 247, .35));
+}
+
+@media (hover: none) {
+    .pet {
+        display: none;
+    }
+}
+
+/* ---------- floating decorative pixel icons ---------- */
+
+.floaters {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floater {
+    position: absolute;
+    image-rendering: pixelated;
+    opacity: .8;
+    will-change: transform;
+    animation: up-down 1.5s ease-in-out infinite;
+}
+
+@keyframes up-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@media (max-width: 720px) {
+    .floaters {
+        display: none;
+    }
+}
+
+/* ---------- nav ---------- */
+
+.nav {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding-top: 28px;
+}
+
+.nav a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .04em;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 9px 16px;
+    transition: color var(--dur), border-color var(--dur);
+}
+
+.nav a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.nav a:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.nav a:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 90px 20px 70px;
+}
+
+.hero__name {
+    font-family: var(--font-pixel);
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.4;
+    margin: 0 0 18px;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0 rgba(122, 162, 247, .25);
+}
+
+.hero__tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.blink {
+    color: var(--accent);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ---------- content / bento ---------- */
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 20px 90px;
+}
+
+.section-label {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: var(--text-tertiary);
+    margin: 30px 2px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: var(--gap);
+}
+
+.bento--tools {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ---------- pixel card ---------- */
+
+.pcard {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    padding: 16px;
+    grid-column: span 1;
+    clip-path: polygon(0 var(--notch), var(--notch) var(--notch), var(--notch) 0,
+            calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch),
+            100% calc(100% - var(--notch)), calc(100% - var(--notch)) calc(100% - var(--notch)), calc(100% - var(--notch)) 100%,
+            var(--notch) 100%, var(--notch) calc(100% - var(--notch)), 0 calc(100% - var(--notch)));
+    transition: border-color var(--dur), transform var(--dur);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pcard:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--border);
+}
+
+.pcard--featured {
+    grid-column: span 2;
+}
+
+.pcard--full {
+    grid-column: 1 / -1;
+}
+
+.pcard--muted {
+    opacity: .5;
+}
+
+.pcard--muted:hover {
+    opacity: .8;
+}
+
+.pcard__kicker {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-tertiary);
+    text-transform: lowercase;
+}
+
+.pcard__title {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 14.5px;
+    margin: 0;
+    color: var(--text);
+}
+
+.pcard--currently .pcard__title {
+    font-size: 17px;
+}
+
+.pcard__desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+}
+
+.pcard__meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+}
+
+.pcard__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.status {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: #8bd450;
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+}
+
+.pcard__links {
+    display: flex;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+}
+
+.pcard__links a {
+    color: var(--text-secondary);
+    transition: color var(--dur);
+}
+
+.pcard__links a:hover {
+    color: var(--accent);
+}
+
+.pcard__cta {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    margin-top: auto;
+}
+
+/* ---------- quote card ---------- */
+
+.pcard--quote {
+    justify-content: center;
+}
+
+.quote {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+}
+
+.quote__cite {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-tertiary);
+}
+
+/* ---------- discord card ---------- */
+
+.pixel-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.pixel-icon--discord {
+    background: var(--accent);
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+
+}
+
+/* ---------- github ---------- */
+
+.gh-stats {
+    display: flex;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+}
+
+.gh-stats b {
+    color: var(--text);
+}
+
+.gh-graph {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 14px;
+    filter: saturate(.85);
+}
+
+/* ---------- tools ---------- */
+
+.pcard--tool {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 14px 16px;
+}
+
+.card__icon {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 2px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+}
+
+/* ---------- focus ---------- */
+
+a:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+    .bento {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pcard--featured {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 460px) {
+    body {
+        cursor: auto;
+    }
+
+    .hero {
+        padding: 60px 16px 44px;
+    }
+
+    .content {
+        padding: 0 16px 64px;
+    }
+
+    .bento {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .pcard {
+        padding: 12px;
+    }
+
+    .nav {
+        gap: 4px;
+    }
+
+    .nav a {
+        padding: 7px 11px;
+        font-size: 10px;
+    }
+
+    .pcard--quote {
+        grid-column: 1 / -1;
+    }
+
+    .pcard--full .pcard__row {
+        display: none;
+    }
+
+    .pcard--full {
+        overflow: hidden;
+    }
+
+    .gh-graph {
+        width: 200%;
+        max-width: 200%;
+        margin-left: -100%;
+    }
+
+    .foot {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
